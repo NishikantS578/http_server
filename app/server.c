@@ -181,6 +181,7 @@ int handle_client(void *client)
 			else if (buf[i] == ' ')
 			{
 				sprintf(res, "HTTP/1.1 200 OK\r\n\r\n");
+				res_len = strlen(res);
 			}
 		}
 	}
@@ -227,7 +228,6 @@ int handle_client(void *client)
 		}
 	}
 
-	printf("\n%s, %d", res, res_len);
 	send(client_fd, res, res_len, MSG_CONFIRM);
 	close(client_fd);
 	return 0;
