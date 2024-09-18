@@ -1,2 +1,1 @@
-# http_server
-HTTP Server
+# http server in C
